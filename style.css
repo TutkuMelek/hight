@@ -1,0 +1,7 @@
+pre code.hljs {
+  background: black;
+  color: #02c0ff;
+}
+pre code.python .comment {
+  color: green;
+}

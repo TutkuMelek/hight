@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/agate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script>
+  document.querySelectorAll("pre code").forEach(function (el) {
+    el.addEventListener("click", function () {
+      document.execCommand("copy");
+    });
+  });
+</script>
+
+</head>
+
+<body>
+  <pre><code class="python">
+    # models.py
+    # The id fields is automaticly created by Django for each model that why it's not show below
+    
+    from django.db import models
+    
+    class Customer(models.Model)
+    name = models.Charfield('Customer', max_length=120)
+    age = models.IntegerField()
+    note = models.TextField(blank=True, null = True)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+    credit = models.FloatField(blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    # Select Field (return value, display value)
+    TYPE_CHOICES = (
+    ('Customer', 'Customer'),
+    ('Supplier', 'Supplier'),
+    ('Student', 'Student'),
+    )
+    
+    type = models.CharField(choices=TYPE_CHOICES)
+  </code></pre>
+</body>
+
+</html>
